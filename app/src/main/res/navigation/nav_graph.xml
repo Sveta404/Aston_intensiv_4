@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.fragmentabcd.FragmentMain"
+        android:label="Fragment Main">
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentA"
+            app:destination="@id/fragmentA" />
+        <action
+            android:id="@+id/action_fragmentMain_to_contact_list"
+            app:destination="@id/contact_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.example.fragmentabcd.task1.FragmentA"
+        android:label="Fragment A">
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.example.fragmentabcd.task1.FragmentB"
+        android:label="Fragment B">
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentC"
+            app:destination="@id/fragmentC" />
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentA"
+            app:destination="@id/fragmentA" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentC"
+        android:name="com.example.fragmentabcd.task1.FragmentC"
+        android:label="Fragment C">
+        <argument
+            android:name="message"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentD"
+            app:destination="@id/fragmentD" />
+        <action
+            android:id="@+id/action_fragmentC_to_fragmentA"
+            app:destination="@id/fragmentA" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentD"
+        android:name="com.example.fragmentabcd.task1.FragmentD"
+        android:label="Fragment D">
+        <action
+            android:id="@+id/action_fragmentD_to_fragmentB"
+            app:destination="@id/fragmentB" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contact_list"
+        android:name="com.example.fragmentabcd.task2.FragmentListContact"
+        android:label="Contact List">
+        <action
+            android:id="@+id/action_list_to_form"
+            app:destination="@id/contact_form" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/contact_form"
+        android:name="com.example.fragmentabcd.task2.FragmentFormContact"
+        android:label="Contact Form">
+        <argument
+            android:name="contact"
+            app:argType="com.example.fragmentabcd.task2.Contact" />
+        <action
+            android:id="@+id/action_form_to_list"
+            app:destination="@id/contact_list" />
+    </fragment>
+
+</navigation>
